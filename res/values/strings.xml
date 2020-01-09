@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <!-- General -->
-    <string name="app_name">RCS Demo</string>
+    <string name="app_name">TechM RCS Next</string>
     <!-- Splash / login screen -->
-    <string name="splashMessage">Welcome to the RCS chat demo</string>
-    <string name="splashProceed">Proceed</string>
+    <string name="splashMessage">TechM RCS Next</string>
+    <string name="splashProceed">Login</string>
     <string name="splashVersion">Version 2.0 OMA Compliant</string>
     <string name="splashStatusIndicatorText">enter username / password</string>
     <!-- Main menu screen -->
@@ -20,17 +20,59 @@
     <string name="menu_settings">menu settings : not currently used</string>
     <string name="isComposingEllipsis">...</string>
     <!-- Add contact -->
+    
+   
     <string name="addContactMesssage">Enter the details of the RCS contact below.</string>
     <string name="addContactDisplayName">Display name</string>
-    <string name="addContactUriPrompt">Contact URI</string>
+    <string name="addContactUriPrompt">OTT Id</string>
     <string name="addContactSaveButton">Save contact</string>
     <string name="addContactCancelButton">Cancel</string>
     <string name="addContactUriInfo">tel: or sip: prefix required</string>
     <!-- Edit contact -->
-    <string name="editContactMesssage">Change contact details for your RCS contact below.</string>
+    <string name="editContactMesssage">Edit Contact Details</string>
     <string name="editContactDisplayName">Display name</string>
     <string name="editContactUriPrompt">Contact URI</string>
     <string name="editContactSaveButton">Save contact</string>
     <string name="editContactCancelButton">Cancel</string>
     <string name="editContactDeleteButton">Delete contact</string>
+     <string name="startGroupChat">Start Group Chat</string>
+     <string name="options">Settings</string>
+      <string name="skype">Skype</string>
+       <string name="gtalk">Gtalk</string>
+        <string name="joyn">Joyn</string>
+         <color name="black">#FF000000</color>
+        <string name="settings">Settings</string> 
+        
+        <string-array name="accounts_array">
+       
+        <item>Joyn</item>
+        <item>Gtalk</item>
+        <item>Skype</item>
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>LinkedIn</item>
+    </string-array>
+    
+         <string-array name="projects_array">
+        <item>Project Mercury</item>
+        <item>Project Venus</item>
+        <item>Project Earth</item>
+        <item>Project Mars</item>
+    </string-array>
+    <string name="location">Location</string>
+    <string name="cant_read_folder">folder can\'t be read!</string>
+    <string name="nnew">New</string>
+    <string name="select">Select</string>
+    <string name="file_name">File name:</string>
+    <string name="cancel">Cancel</string>
+    <string name="create">Save</string>
+    <string name="no_data">No Data</string>
+    <color name="gray">#ffff0000</color>
+    <string name="err">Error</string>
+    <string name="pref_content_title">Accounts setting</string>
+    <string name="http">http://</string>
+    <string name="addRCSIdentityPrompt"> RCS Identity</string>
+    <string name="editContact"> Edit Contact</string>
+    <string name="Inbox">Inbox</string>
+    <string name="addContact">Add Contact</string>
 </resources>

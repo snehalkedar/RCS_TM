@@ -9,25 +9,31 @@
     <LinearLayout android:id="@+id/mainMenuOptions" android:layout_width="fill_parent"
         android:layout_alignParentBottom="true"
     	android:layout_height="wrap_content" android:orientation="horizontal"
-    	style="@android:style/ButtonBar">
+    	style="@android:style/ButtonBar" 
+    	android:weightSum="100" >
 
-        <TextView
-            android:id="@+id/contactEditDeleteText"
-            android:layout_width="wrap_content"
+      <TextView
+            android:id="@+id/notifiationtextView"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center|center_vertical"
-            android:layout_weight="1"
+          	android:layout_alignParentLeft="true"
+         	  android:layout_weight="75"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:gravity="center"
-            android:text="@string/contactEditDeleteText" />
             
-    	<Button android:id="@+id/addButton" android:layout_width="wrap_content"
-        	android:layout_height="wrap_content" android:layout_weight="1"
-        	android:text="@string/mainMenuAddContact"
-        	android:onClick="addContactClicked" 
-        	 
-        	/>
+
+             />
+            
+    	<ImageButton android:id="@+id/MoreButton"    android:layout_width="0dp"
+        	android:layout_height="wrap_content"
+        		  android:layout_weight="25"
+        	android:layout_alignParentRight="true"
+      	  	android:layout_marginLeft="20px"
+        	android:onClick="MoreButtonClicked" 
+        	android:src="@drawable/trymore"
+        	android:background="@android:color/transparent"
+        	/> 
     	
     </LinearLayout>
 

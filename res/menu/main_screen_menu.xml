@@ -4,4 +4,10 @@
           android:title="@string/refreshContacts"/>
     <item android:id="@+id/signOut"
           android:title="@string/signOut"/>
+    <item android:id="@+id/Inbox"
+          android:title="@string/Inbox"/>
+   addContact
+    <item android:id="@+id/addContact"
+          android:title="@string/addContact"/>
+          
 </menu>

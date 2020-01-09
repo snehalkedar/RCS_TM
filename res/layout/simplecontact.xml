@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" android:gravity="left">
+ 
+    <!--  ListRow Left side Thumbnail image -->
+    <LinearLayout android:id="@+id/chatcontactthumbnail_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/image_bg"
+        android:layout_marginRight="5dip">
+ 
+        <ImageView
+            android:id="@+id/chatcontactthumbnail_image"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/no_thumbnail"            
+            />
+  <TextView
+        android:id="@+id/chatcontactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail_wrapper"
+        android:layout_toRightOf="@+id/chatcontactthumbnail_wrapper"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"/>
+    </LinearLayout>
+
+   
+ 
+    
+   
+    
+    
+   
+
+   <TextView
+        android:id="@+id/chatcontactInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chatcontactthumbnail_wrapper"
+        android:textColor="#343434"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginTop="1dip"
+      
+        />
+   
+    
+</RelativeLayout>

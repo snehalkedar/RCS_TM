@@ -3,6 +3,10 @@ package org.gsm.rcsApp.RCS;
 import java.util.HashMap;
 
 public class ChatSessionManager {
+	/**
+	 * @uml.property  name="sessionCache"
+	 * @uml.associationEnd  qualifier="destinationUri:java.lang.String org.gsm.rcsApp.RCS.ChatSession"
+	 */
 	HashMap<String, ChatSession> sessionCache=null;
 	
 	public ChatSessionManager() {

@@ -25,9 +25,24 @@ import android.widget.ImageView;
 
 public class ImageLoader {
     
+    /**
+	 * @uml.property  name="memoryCache"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
     MemoryCache memoryCache=new MemoryCache();
+    /**
+	 * @uml.property  name="fileCache"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
     FileCache fileCache;
+    /**
+	 * @uml.property  name="imageViews"
+	 * @uml.associationEnd  qualifier="imageView:android.widget.ImageView java.lang.String"
+	 */
     private Map<ImageView, String> imageViews=Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
+    /**
+	 * @uml.property  name="executorService"
+	 */
     ExecutorService executorService; 
     
     public ImageLoader(Context context){
@@ -35,6 +50,9 @@ public class ImageLoader {
         executorService=Executors.newFixedThreadPool(5);
     }
     
+    /**
+	 * @uml.property  name="stub_id"
+	 */
     final int stub_id = R.drawable.no_thumbnail;
     
     public void DisplayImage(String url, ImageView imageView)
@@ -135,13 +153,19 @@ public class ImageLoader {
         }
     }
     
+    /**
+	 * @author  sk0099421
+	 */
     class PhotosLoader implements Runnable {
+        /**
+		 * @uml.property  name="photoToLoad"
+		 * @uml.associationEnd  
+		 */
         PhotoToLoad photoToLoad;
         PhotosLoader(PhotoToLoad photoToLoad){
             this.photoToLoad=photoToLoad;
         }
         
-        @Override
         public void run() {
             if(imageViewReused(photoToLoad))
                 return;
@@ -163,9 +187,16 @@ public class ImageLoader {
     }
     
     //Used to display bitmap in the UI thread
+    /**
+	 * @author  sk0099421
+	 */
     class BitmapDisplayer implements Runnable
     {
         Bitmap bitmap;
+        /**
+		 * @uml.property  name="photoToLoad"
+		 * @uml.associationEnd  
+		 */
         PhotoToLoad photoToLoad;
         public BitmapDisplayer(Bitmap b, PhotoToLoad p){bitmap=b;photoToLoad=p;}
         public void run()

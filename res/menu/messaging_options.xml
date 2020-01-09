@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/startGroupChat"
+          android:title="@string/startGroupChat"/>
+   
+    <item android:title="Send file" android:id="@+id/sendFile"></item>
+  <item android:title="Delete user" android:id="@+id/deleteUser"/>
+  <item android:title="Exit Chat" android:id="@+id/exitChat"/>
+</menu>

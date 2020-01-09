@@ -3,7 +3,13 @@ package org.gsm.rcsApp.RCS;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.os.DropBoxManager.Entry;
+
 public class ContactStateManager {
+	/**
+	 * @uml.property  name="contactStateCache"
+	 * @uml.associationEnd  qualifier="contactUri:java.lang.String org.gsm.rcsApp.RCS.ContactState"
+	 */
 	HashMap<String, ContactState> contactStateCache=null;
 //	HashMap<String, ChatMessage> consolidatedMessageCache=null;
 	private static HashMap<String, ChatMessage> consolidatedMessageSentCache=new HashMap<String, ChatMessage>();
@@ -26,13 +32,31 @@ public class ContactStateManager {
 	
 	public ContactState getOrCreateContactState(String contactUri) {
 		ContactState entry=null;
-		if (!contactStateCache.containsKey(contactUri)) {
+		String newcontactURI=contactUri.substring(4);
+		
+		if(newcontactURI.contains("@"))
+			newcontactURI=newcontactURI.substring(0, 13);
+		
+		for (java.util.Map.Entry<String, ContactState> entry1 : contactStateCache.entrySet()) {
+			String key = entry1.getKey();
+		    Object value = entry1.getValue();
+		    if(key.contains(newcontactURI)){
+		    	entry=contactStateCache.get(key);
+		    	return entry;
+		    }
+		    	
+		}
+		entry=new ContactState(contactUri);
+		contactStateCache.put(contactUri, entry);
+		return entry;
+		
+		/*if (!contactStateCache.containsKey(contactUri)) {
 			entry=new ContactState(contactUri);
 			contactStateCache.put(contactUri, entry);
 		} else {
 			entry=contactStateCache.get(contactUri);
-		}
-		return entry;
+		}*/
+		
 	}
 	
 	public void setChatVisible(String contactUri, boolean visibility) {

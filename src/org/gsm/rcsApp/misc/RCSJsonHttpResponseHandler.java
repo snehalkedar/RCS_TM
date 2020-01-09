@@ -26,6 +26,10 @@ public class RCSJsonHttpResponseHandler extends AsyncHttpResponseHandler {
     protected static final int START_MESSAGE = 2;
     protected static final int FINISH_MESSAGE = 3;
 
+    /**
+	 * @uml.property  name="handler"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
     private Handler handler;
 
     /**

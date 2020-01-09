@@ -5,30 +5,63 @@ import android.os.Parcelable;
 
 public class ChatSession implements Parcelable {
 
+	/**
+	 * @uml.property  name="destinationUri"
+	 */
 	String destinationUri=null;
+	/**
+	 * @uml.property  name="sessionId"
+	 */
 	String sessionId=null;
+	/**
+	 * @uml.property  name="messageId"
+	 */
 	String messageId=null;
 	
+	/**
+	 * @return
+	 * @uml.property  name="destinationUri"
+	 */
 	public String getDestinationUri() {
 		return destinationUri;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="sessionId"
+	 */
 	public String getSessionId() {
 		return sessionId;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="messageId"
+	 */
 	public String getMessageId() {
 		return messageId;
 	}
 
+	/**
+	 * @param destinationUri
+	 * @uml.property  name="destinationUri"
+	 */
 	public void setDestinationUri(String destinationUri) {
 		this.destinationUri = destinationUri;
 	}
 
+	/**
+	 * @param sessionId
+	 * @uml.property  name="sessionId"
+	 */
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
 	}
 
+	/**
+	 * @param messageId
+	 * @uml.property  name="messageId"
+	 */
 	public void setMessageId(String messageId) {
 		this.messageId = messageId;
 	}

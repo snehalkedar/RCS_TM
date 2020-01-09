@@ -3,6 +3,8 @@ package org.gsm.rcsApp.adapters;
 import java.util.ArrayList;
 
 import org.gsm.rcsApp.RCS.ChatMessage;
+import org.gsm.rcsApp.RCS.Contact;
+import org.gsm.rcsApp.activities.MainActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,7 +19,15 @@ import org.gsm.RCSDemo.R;
 
 public class MessageRowAdapter extends BaseAdapter {
 	 
+    /**
+	 * @uml.property  name="activity"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
     private Activity activity;
+    /**
+	 * @uml.property  name="messageData"
+	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="org.gsm.rcsApp.RCS.ChatMessage"
+	 */
     private ArrayList<ChatMessage> messageData;
     private static LayoutInflater inflater=null;
  
@@ -56,40 +66,57 @@ public class MessageRowAdapter extends BaseAdapter {
         TextView messageTimeL=(TextView) vi.findViewById(R.id.messageTimeL);
         TextView messageTimeR=(TextView) vi.findViewById(R.id.messageTimeR);
         
+        TextView senderL=(TextView)vi.findViewById(R.id.senderL);
+        TextView senderR=(TextView)vi.findViewById(R.id.senderR);
+        
         String messageText=messageData.get(position).getMessageText();
         String messageTime=messageData.get(position).getMessageTime();
         String status=messageData.get(position).getStatus();
+        String sender = messageData.get(position).getContactUri();
         
+        Contact c = MainActivity.getContactFromConatctURI(sender);
+        if(c!=null)
+        	sender = c.getContactInfo();
+      /*  if(sender.contains("tel:+918410123415"))
+        	sender="eswar1@gtalk.com";
+		if(sender.contains("tel:+918410123414"))
+			sender="eswar@skype.com";*/
+			
         String messageDirection=messageData.get(position).getMessageDirection();
 
         if (ChatMessage.MESSAGE_RECEIVED.equalsIgnoreCase(messageDirection)) {
         	messageTextL.setText(messageText);
         	messageTimeL.setText(messageTime);
-
+        	senderR.setText(sender);
+        	
         	messageSpacerL.setVisibility(View.INVISIBLE);
         	messageWrapperR.setVisibility(View.INVISIBLE);
         	messageTextR.setVisibility(View.INVISIBLE);   
         	messageTimeR.setVisibility(View.INVISIBLE);
-
+        	senderL.setVisibility(View.INVISIBLE);
+        	
         	messageSpacerR.setVisibility(View.VISIBLE);
         	messageWrapperL.setVisibility(View.VISIBLE);
         	messageTextL.setVisibility(View.VISIBLE);       
         	messageTimeL.setVisibility(View.VISIBLE);
+        	senderR.setVisibility(View.VISIBLE);
+        	
         } else {
         	messageTextR.setText(messageText);
         	messageTimeR.setText(messageTime);
-
+        	senderL.setText("Me");
+        	
         	messageSpacerR.setVisibility(View.INVISIBLE);
         	messageWrapperL.setVisibility(View.INVISIBLE);
         	messageTextL.setVisibility(View.INVISIBLE);
         	messageTimeL.setVisibility(View.INVISIBLE);
-
+        	senderR.setVisibility(View.INVISIBLE);
         	messageSpacerL.setVisibility(View.VISIBLE);
         	messageWrapperR.setVisibility(View.VISIBLE);
         	messageTextR.setVisibility(View.VISIBLE);
         	messageTimeR.setVisibility(View.VISIBLE);
-        	
-        	if (ChatMessage.MESSAGE_STATUS_PENDING.equalsIgnoreCase(status)) {
+        	senderL.setVisibility(View.VISIBLE);
+        	/*if (ChatMessage.MESSAGE_STATUS_PENDING.equalsIgnoreCase(status)) {
         		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx);
         	} else if (ChatMessage.MESSAGE_STATUS_DELIVERED.equalsIgnoreCase(status)) {
         		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx_delivered);
@@ -97,9 +124,9 @@ public class MessageRowAdapter extends BaseAdapter {
         		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx_viewed);
         	} else if (ChatMessage.MESSAGE_STATUS_SENT.equalsIgnoreCase(status)) {
         		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx_sent);
-        	} else {
-        		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx);
-        	}
+        	} else {*/
+        		messageWrapperR.setBackgroundResource(R.drawable.roundedbox_tx_sent);
+        //	}
         }
 
         return vi;

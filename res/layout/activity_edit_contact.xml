@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dip"
+        android:layout_marginTop="20dip"
         android:gravity="center"
         android:text="@string/editContactMesssage"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -22,12 +22,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editContactMessage"
-        android:layout_marginTop="80dip"
-        android:layout_marginLeft="10dip"
+        android:layout_marginTop="40dip"
+     
         android:text="@string/editContactDisplayName"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        />
 
-    <EditText
+    <TextView
         android:id="@+id/editContactDisplayNameInput"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -37,10 +37,146 @@
         android:ems="10"
         android:inputType="textPersonName" >
 
-        <requestFocus />
-    </EditText>
+       
+    </TextView>
         
-    <Button
+      <TextView
+        android:id="@+id/RCSPrompt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editContactDisplayNamePrompt"
+        android:layout_marginTop="20dip"
+      
+        android:text="RCS ACCOUNT"
+        />
+
+    <TextView
+        android:id="@+id/RCSNameInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/RCSPrompt"
+        android:layout_alignBottom="@+id/RCSPrompt"
+        android:layout_toRightOf="@+id/RCSPrompt"
+        android:ems="10"
+         >
+
+       
+    </TextView>
+     <ImageButton 
+       android:id="@+id/RCSdeletebutton"
+       android:layout_width="15dp"
+        android:layout_height="19dp"
+         android:layout_alignTop="@+id/RCSPrompt"
+         android:src="@drawable/ic_btn_round_minus" 
+         android:layout_toRightOf="@+id/RCSNameInput"
+         android:background="@android:color/transparent" 
+         android:onClick="deleteRCSeAcc"/>
+         
+       <TextView
+        android:id="@+id/GtalkPrompt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/RCSPrompt"
+        android:layout_marginTop="20dip"
+    
+        android:text="GTALK ACCOUNT"
+        />
+
+    <TextView
+        android:id="@+id/GtalkNameInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/GtalkPrompt"
+        android:layout_alignBottom="@+id/GtalkPrompt"
+        android:layout_toRightOf="@+id/GtalkPrompt"
+        android:ems="10"
+        >
+
+       
+    </TextView>
+    
+     <ImageButton 
+       android:id="@+id/Gtalkdeletebutton"
+       android:layout_width="15dp"
+        android:layout_height="19dp"
+         android:layout_alignTop="@+id/GtalkPrompt"
+         android:src="@drawable/ic_btn_round_minus" 
+         android:layout_toRightOf="@+id/GtalkNameInput"
+         android:background="@android:color/transparent" 
+         android:onClick="deleteGtalkAcc"/>
+         
+      <TextView
+        android:id="@+id/SkypePrompt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/GtalkPrompt"
+        android:layout_marginTop="40dip"
+    
+        android:text="SKYPE ACCOUNT"
+        />
+
+    <TextView
+        android:id="@+id/SkypeNameInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/SkypePrompt"
+        android:layout_alignBottom="@+id/SkypePrompt"
+        android:layout_toRightOf="@+id/SkypePrompt"
+        android:ems="10"
+        >
+
+       
+    </TextView>
+     <ImageButton 
+       android:id="@+id/Skypedeletebutton"
+       android:layout_width="15dp"
+        android:layout_height="19dp"
+         android:layout_alignTop="@+id/SkypePrompt"
+         android:src="@drawable/ic_btn_round_minus" 
+         android:layout_toRightOf="@+id/SkypeNameInput"
+         android:background="@android:color/transparent" 
+         android:onClick="deleteSkypeAcc"/>
+         
+      <TextView
+        android:id="@+id/FacebookPrompt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/SkypePrompt"
+        android:layout_marginTop="40dip"
+      
+        android:text="FACEBOOK ACCOUNT"
+        />
+
+    <TextView
+        android:id="@+id/FacebookNameInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/FacebookPrompt"
+        android:layout_alignBottom="@+id/FacebookPrompt"
+        android:layout_toRightOf="@+id/FacebookPrompt"
+        android:ems="10"
+           android:text=""
+        >
+
+   
+    </TextView>
+     
+      <ImageButton 
+       android:id="@+id/Facebookdeletebutton"
+       android:layout_width="15dp"
+        android:layout_height="19dp"
+            android:layout_alignBaseline="@+id/FacebookPrompt"
+         android:src="@drawable/ic_btn_round_minus" 
+         android:layout_toRightOf="@+id/FacebookNameInput"
+         android:background="@android:color/transparent" 
+         android:onClick="deleteFbAcc"/>
+   
+     
+   <!--  <Button
         android:id="@+id/editContactSaveButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -48,24 +184,26 @@
         android:layout_above="@+id/editContactDeleteButton"
         android:onClick="saveContact"
         android:text="@string/editContactSaveButton"
-        />
+        /> 
 
     <Button
         android:id="@+id/editContactDeleteButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/editContactCancelButton"
+         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dip"
         android:onClick="deleteContact"
         android:text="@string/editContactDeleteButton"
-        />
+        />-->
     
     <Button
         android:id="@+id/editContactCancelButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+      android:layout_centerHorizontal="true"
+         
         android:onClick="cancelSave"
         android:text="@string/editContactCancelButton"
         />

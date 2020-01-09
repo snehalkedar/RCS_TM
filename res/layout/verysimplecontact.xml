@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+     android:layout_marginLeft="30px"
+    
+  >
+  <RelativeLayout
+   android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+     android:layout_marginLeft="30px" >
+    <ImageView
+            android:id="@+id/simplethumbnail_image"
+            android:layout_width="50px"
+            android:layout_height="50px"
+           android:layout_marginLeft="10px"        
+            />
+             <TextView
+        android:id="@+id/simplechatcontactName"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@+id/simplethumbnail_image"
+        android:textColor="#040404"
+        />
+        
+        <TextView
+            android:id="@+id/ContactStatus"
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+           android:layout_marginLeft="10px" 
+           android:layout_below="@+id/simplethumbnail_image"
+           android:text="invited" 
+           android:textSize="10sp"
+           android:layout_alignParentLeft="true"
+           android:textStyle="italic"
+           >
+                   
+        </TextView>
+        
+  </RelativeLayout>
+         <LinearLayout 
+        android:layout_width="2dp"
+        android:layout_height="fill_parent" 
+        android:background="@color/black"      
+       />  
+</LinearLayout>

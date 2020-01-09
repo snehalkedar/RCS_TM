@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/pref_content_title">  
+            
+            
+       <org.gsm.RCSDemo.AccountsPreference
+                android:key="accounts" 
+                android:title="Set account"
+                android:hint="@string/http"
+                android:inputType="textUri|textMultiLine" />
+            
+	</PreferenceCategory>
+</PreferenceScreen>

@@ -5,6 +5,9 @@ import android.content.Context;
 
 public class FileCache {
     
+    /**
+	 * @uml.property  name="cacheDir"
+	 */
     private File cacheDir;
     
     public FileCache(Context context){

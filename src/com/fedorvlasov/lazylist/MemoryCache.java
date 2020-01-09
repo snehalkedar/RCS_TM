@@ -11,9 +11,19 @@ import android.util.Log;
 public class MemoryCache {
 
     private static final String TAG = "MemoryCache";
+    /**
+	 * @uml.property  name="cache"
+	 * @uml.associationEnd  qualifier="id:java.lang.String android.graphics.Bitmap"
+	 */
     private Map<String, Bitmap> cache=Collections.synchronizedMap(
             new LinkedHashMap<String, Bitmap>(10,1.5f,true));//Last argument true for LRU ordering
+    /**
+	 * @uml.property  name="size"
+	 */
     private long size=0;//current allocated size
+    /**
+	 * @uml.property  name="limit"
+	 */
     private long limit=1000000;//max memory in bytes
 
     public MemoryCache(){
@@ -21,6 +31,10 @@ public class MemoryCache {
         setLimit(Runtime.getRuntime().maxMemory()/4);
     }
     
+    /**
+	 * @param new_limit
+	 * @uml.property  name="limit"
+	 */
     public void setLimit(long new_limit){
         limit=new_limit;
         Log.i(TAG, "MemoryCache will use up to "+limit/1024./1024.+"MB");

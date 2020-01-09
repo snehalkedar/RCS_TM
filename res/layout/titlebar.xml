@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="fill_parent" 
+  android:layout_height="fill_parent"
+  android:orientation="horizontal">
+
+<TextView 
+
+  android:id="@+id/myTitle" 
+  android:text="TechM RCS Next" 
+  android:layout_width="wrap_content" 
+  android:layout_height="fill_parent" 
+ 
+   />
+
+
+  <!--  <ImageView android:id="@+id/ImageView01" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/quickcontact_slider_presence_active">
+
+</ImageView>
+<TextView 
+
+  android:id="@+id/myStatus" 
+  android:text="ONLINE" 
+android:layout_toLeftOf="@+id/ImageView01"
+android:layout_marginRight="5px"
+  android:layout_width="wrap_content" 
+  android:layout_height="fill_parent" 
+ 
+   /> -->
+</RelativeLayout>

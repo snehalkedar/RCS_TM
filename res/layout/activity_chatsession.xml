@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+ 
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:weightSum="100" android:orientation="vertical">
+  
+  <LinearLayout
+    android:layout_height="0dp"
+        android:layout_weight="19"
+    android:orientation="horizontal" android:layout_width="fill_parent">
+      <Gallery 
+       android:id="@+id/listview12"
+      android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+      />
+  
+   </LinearLayout>
+  
+   <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp" 
+       
+        android:background="@color/black"      
+     
+        android:layout_weight="1"
+       />
+    <LinearLayout
+    android:layout_height="0dp"
+        android:layout_width="fill_parent" 
+    android:layout_weight="80"
+    >
+
+<RelativeLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+
 
 	        
     <Button
@@ -41,7 +75,7 @@
         android:minLines="3" >
         <requestFocus/>
     </EditText>
-	    
+	 
     <LinearLayout
         android:id="@+id/messageListHolder"
         android:layout_width="fill_parent"
@@ -62,3 +96,34 @@
     </LinearLayout>
     
 </RelativeLayout>
+ </LinearLayout>
+ 
+ <!--  <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+       
+        android:background="@color/black"      
+     
+        android:layout_weight="1"
+       />
+    
+    
+    <LinearLayout
+     android:layout_height="fill_parent"
+      android:layout_width="0dp" 
+   android:layout_weight="39"
+
+     >
+     
+     
+     <ListView
+	            android:id="@+id/chatcontactList"
+	            android:layout_height="match_parent"	
+	            android:divider="#b5b5b5"
+        		android:dividerHeight="1dp"
+        		android:listSelector="@drawable/list_selector"  
+        		
+	            android:layout_width="match_parent">    		
+	    </ListView>
+    </LinearLayout>-->
+  </LinearLayout>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dip"
     android:background="@drawable/list_selector"
     android:orientation="horizontal"
-    android:padding="5dip" >
+    android:padding="5dip" android:gravity="left">
  
     <!--  ListRow Left side Thumbnail image -->
     <LinearLayout android:id="@+id/thumbnail_wrapper"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="3dip"
-        android:layout_alignParentLeft="true"
+        android:layout_height="50dip"
+        android:padding="1dip"
+        android:layout_alignParentRight="true"
         android:background="@drawable/image_bg"
-        android:layout_marginRight="5dip">
+        android:layout_marginLeft="5dip">
  
         <ImageView
             android:id="@+id/thumbnail_image"
             android:layout_width="50dip"
-            android:layout_height="50dip"
+            android:layout_height="fill_parent"
             android:src="@drawable/no_thumbnail"            
             />
  
@@ -29,13 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail_wrapper"
-        android:layout_toRightOf="@+id/thumbnail_wrapper"
+        android:layout_toRightOf="@+id/presence"
         android:textColor="#040404"
         android:typeface="sans"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"/>
+       
+        android:paddingLeft="10px"
+         />
  
-    <TextView
+  <!--    <TextView
         android:id="@+id/contactInfo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -43,9 +45,89 @@
         android:textColor="#343434"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/thumbnail_wrapper"
-        />
- 
+        android:layout_toLeftOf="@+id/thumbnail_wrapper"
+        android:layout_alignLeft="@+id/contactName"
+        android:paddingLeft="10px"
+        /> -->
+       
+    <ImageButton
+    android:id="@+id/ContactTypeRCS"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+           android:layout_below="@+id/contactName"
+      android:layout_marginLeft="70dip"
+        android:src="@drawable/joyn"
+    />
+    
+     <ImageButton
+    android:id="@+id/ContactTypeGtalk"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+     android:layout_below="@+id/contactName"
+       android:layout_marginLeft="15dip"
+     
+        android:layout_toRightOf="@+id/ContactTypeRCS" 	
+      android:src="@drawable/gtalk_mini_online"
+    />
+    <ImageButton
+    android:id="@+id/ContactTypeSkype"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+     android:layout_below="@+id/contactName"
+    android:layout_marginLeft="15dip"
+        android:layout_toRightOf="@+id/ContactTypeGtalk" 	
+      android:src="@drawable/small_skype_icon_online"
+      
+    />
+    <ImageButton
+    android:id="@+id/ContactTypeFacebook"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+    android:layout_below="@+id/contactName"
+    android:layout_marginLeft="15dip"
+        android:layout_toRightOf="@+id/ContactTypeSkype" 	
+      android:src="@drawable/facebook_mini"
+    />
+    
+  <!--  <ImageView
+    android:id="@+id/gtalkContact"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/contactInfo"
+        android:src="@drawable/gtalk_mini"
+        android:layout_marginLeft="4dip" android:layout_marginRight="4dip" android:layout_marginTop="1dip" 
+          android:layout_toRightOf="@+id/skypeContact"
+       />
+    
+     <ImageView
+    android:id="@+id/facebookContact"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/contactInfo"
+        android:src="@drawable/facebook_small"
+     android:layout_toRightOf="@+id/gtalkContact"
+        android:layout_marginLeft="4dip" android:layout_marginRight="4dip" android:layout_marginTop="1dip"/>
+    
+     <ImageView
+    android:id="@+id/twitterContact"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/contactInfo"
+        android:src="@drawable/twitter_small"
+     android:layout_toRightOf="@+id/facebookContact"
+        android:layout_marginLeft="4dip" android:layout_marginRight="4dip" android:layout_marginTop="1dip"/>-->
+        
+  <!--    <ImageView
+    android:id="@+id/presence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+         android:layout_alignTop="@+id/thumbnail_wrapper"
+        android:gravity="left"
+        android:layout_marginLeft="5dip"
+    android:src="@drawable/quickcontact_slider_presence_active"
+     
+    />
     <TextView
         android:id="@+id/contactStatus"
         android:layout_width="wrap_content"
@@ -56,7 +138,7 @@
         android:layout_marginRight="5dip"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#10bcc9"
-        android:textStyle="bold"/>
+        android:textStyle="bold"/>-->
 
     <TextView
         android:id="@+id/newMessageIndicator"
@@ -71,12 +153,12 @@
         android:text="@string/newMessageArrived"
         android:textStyle="bold"/>
     
-     <!-- Rightend Arrow -->
+     <!-- Rightend Arrow 
      <ImageView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        />
+        />-->
  
 </RelativeLayout>
